@@ -32,10 +32,9 @@ export default function Cadastro() {
     setCarregando(true);
 
     const promise = cadastrarUsuario(formCadastro);
-
     promise.then(() => { navigate("/"); });
     promise.catch(() => {
-      alert("houve um erro no seu cadastro");
+      alert("Houve um erro no seu cadastro");
       setCarregando(false);
     });
   }

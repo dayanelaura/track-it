@@ -17,12 +17,13 @@ export default function Login() {
     } 
   );
 
-  function handleForm(event) {
+  function preencherForm(event) {
     setFormLogin(
       {
-      ...formLogin,
-      [event.target.name]: event.target.value
-      });
+        ...formLogin,
+        [event.target.name]: event.target.value
+      }
+    );
     console.log(formLogin);
   }
 
@@ -35,12 +36,12 @@ export default function Login() {
 
     promise.then((event) => {
       setDadosUsuario(event.data);
-      console.log(event, 'aqui oioi');
-      localStorage.setItem("trackit", JSON.stringify({...event.data, formLogin:formLogin}));
-      navigate("/hoje");
+    //console.log(event, 'aqui oioi');
+      localStorage.setItem("trackit", JSON.stringify({...event.data, formLogin: formLogin}));
+      navigate("/habitos");
     });
     promise.catch(() => {
-      alert("houve um erro no seu login");
+      alert("Houve um erro no seu login");
       setCarregando(false);
     });
 
@@ -51,10 +52,10 @@ export default function Login() {
       <img src={logo} alt="trackit" />
 
       <form onSubmit={handleSubmit}>
-        <input value={formLogin.email} onChange={handleForm} placeholder="email"
+        <input value={formLogin.email} onChange={preencherForm} placeholder="email"
                name="email" type="email" disabled={carregando} 
         required />
-        <input value={formLogin.password} onChange={handleForm} name="password" 
+        <input value={formLogin.password} onChange={preencherForm} name="password" 
                placeholder="senha" type="password" disabled={carregando} 
          required />
 
