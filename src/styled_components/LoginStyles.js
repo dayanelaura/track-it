@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const LoginStyle = styled.div`
+const LoginStyles = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -62,4 +62,4 @@ const LoginStyle = styled.div`
 
 `;
 
-export default LoginStyle;
+export default LoginStyles;

@@ -1,73 +1,74 @@
 import { useContext, useState } from "react";
 import { ThreeDots } from "react-loader-spinner";
 import { Link, useNavigate } from "react-router-dom";
-import logo from "../assets/Logo.png";
-import { loginUser } from "../API/dadosRequests";
-import LoginStyle from "../styled_components/LoginStyle";
+import { logarUsuario } from "../API/dadosRequests";
 import UserContext from "../UserContext";
+import logo from "../assets/Logo.png";
+import LoginStyles from "../styled_components/LoginStyles";
 
 export default function Login() {
   const { setDadosUsuario } = useContext(UserContext);
   const navigate = useNavigate();
+  const [carregando, setCarregando] = useState(false);
+  const [formLogin, setFormLogin] = useState(
+    {
+      email: "",
+      password: ""
+    } 
+  );
 
-  const [isLoading, setIsLoading] = useState(false);
-  const [formLogin, setFormLogin] = useState({
-                                              email: "",
-                                              password: ""
-                                             });
-
-  function handleForm(e) {
-    setFormLogin({
-                  ...formLogin,
-                  [e.target.name]: e.target.value
-                });
+  function handleForm(event) {
+    setFormLogin(
+      {
+      ...formLogin,
+      [event.target.name]: event.target.value
+      });
     console.log(formLogin);
   }
 
-  function handleSubmit(e) {
-    e.preventDefault();
-    setIsLoading(true);
+  function handleSubmit(event) {
+    event.preventDefault();
+    setCarregando(true);
 
-    const promise = loginUser(formLogin);
+    const promise = logarUsuario(formLogin);
     console.log(promise);
 
-    promise.then((e) => {
-      setDadosUsuario(e.data);
-      console.log(e, 'aqui oioi');
-      localStorage.setItem("trackit", JSON.stringify({...e.data, formLogin:formLogin}));
+    promise.then((event) => {
+      setDadosUsuario(event.data);
+      console.log(event, 'aqui oioi');
+      localStorage.setItem("trackit", JSON.stringify({...event.data, formLogin:formLogin}));
       navigate("/hoje");
     });
     promise.catch(() => {
       alert("houve um erro no seu login");
-      setIsLoading(false);
+      setCarregando(false);
     });
 
   }
 
   return (
-    <LoginStyle>
-      <img src={logo} alt="logo trackit" />
+    <LoginStyles>
+      <img src={logo} alt="trackit" />
+
       <form onSubmit={handleSubmit}>
         <input value={formLogin.email} onChange={handleForm} placeholder="email"
-               name="email" type="email" disabled={isLoading} required />
+               name="email" type="email" disabled={carregando} 
+        required />
         <input value={formLogin.password} onChange={handleForm} name="password" 
-               placeholder="senha" type="password" disabled={isLoading} required />
+               placeholder="senha" type="password" disabled={carregando} 
+         required />
 
-        {isLoading ? (
+        {carregando ? (
             <button>
                 <ThreeDots color="#FFFFFF"/>
-            </button>
-            ) : (
-            <button type="submit">Entrar</button>
-            )
+            </button> ) : 
+          ( <button type="submit">Entrar</button> )
         }
-
       </form>
 
       <Link to="/cadastro">
         <p>Não tem uma conta? Cadastre-se!</p>
       </Link>
-
-    </LoginStyle>
+    </LoginStyles>
   );
 }
