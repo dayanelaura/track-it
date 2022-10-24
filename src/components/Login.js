@@ -36,7 +36,6 @@ export default function Login() {
 
     promise.then((event) => {
       setDadosUsuario(event.data);
-    //console.log(event, 'aqui oioi');
       localStorage.setItem("trackit", JSON.stringify({...event.data, formLogin: formLogin}));
       navigate("/habitos");
     });
@@ -53,12 +52,11 @@ export default function Login() {
 
       <form onSubmit={handleSubmit}>
         <input value={formLogin.email} onChange={preencherForm} placeholder="email"
-               name="email" type="email" disabled={carregando} 
+               name="email" type="email" disabled={carregando} data-identifier="input-email"
         required />
         <input value={formLogin.password} onChange={preencherForm} name="password" 
                placeholder="senha" type="password" disabled={carregando} 
-         required />
-
+               data-identifier="input-password" required />
         {carregando ? (
             <button>
                 <ThreeDots color="#FFFFFF"/>

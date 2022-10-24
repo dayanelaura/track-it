@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { ThreeDots } from "react-loader-spinner";
 import { enviarHabito, receberHabito, deletarHabito } from "../API/dadosRequests";
-import { HabitosContainer, AddHabito, InputHabito, BotaoInput, DiasDaSemana, DivHabito, ListaDeHabitos } from "../styled_components/HabitosStyles";
+import { Ajuste, HabitosContainer, AddHabito, InputHabito, BotaoInput, DiasDaSemana, DivHabito, ListaDeHabitos } from "../styled_components/HabitosStyles";
 import UserContext from "../UserContext";
 import Rodape from "./Rodape";
 import Topo from "./Topo";
@@ -177,7 +177,7 @@ export default function Habitos() {
               S
             </DiasDaSemana>
           </div>
-          <div>
+          <Ajuste>
             <BotaoInput onClick={() => setCriandoHabito(false)} color="#52B6FF" backgroundcolor="#FFFFFF">
                 Cancelar
             </BotaoInput>
@@ -192,7 +192,7 @@ export default function Habitos() {
                 </BotaoInput>
                 )
             }
-          </div>
+          </Ajuste>
 
         </InputHabito>
 

@@ -4,13 +4,17 @@ const HabitosContainer = styled.div`
   display: flex;
   flex-direction: column;
   padding-left: 20px;
-  padding-right: 20px;
-  padding-top: 120px;
+  padding-right: 18px;
+  padding-top: 100px;
+  padding-bottom: 85%;
   background-color: #e5e5e5;
-
+  font-family: 'Lexend Deca', sans-serif;
+  height: 100vh;
+  
   p {
     color: #666666;
     font-size: 18px;
+    width: 90vw;
   }
 `;
 
@@ -19,6 +23,7 @@ const AddHabito = styled.div`
   justify-content: space-between;
   align-items: center;
   margin-bottom: 25px;
+  width: 90vw;
 
   h1 {
     font-size: 23px;
@@ -33,8 +38,6 @@ const AddHabito = styled.div`
     border-radius: 5px;
     width: 40px;
     height: 35px;
-    box-sizing: border-box;
-    padding: 5px;
     font-size: 27px;
   }
 `;
@@ -42,22 +45,21 @@ const AddHabito = styled.div`
 const InputHabito = styled.div`
   display: ${props => props.display};
   flex-direction: column;
-  margin-bottom: 30px;
-  width: 88vw;
+  padding: 20px 18px 0px 18px;
+  width: 90vw;
   height: 190px;
   background-color: white;
   border-radius: 5px;
-  box-sizing: border-box;
   justify-content: center;
-  align-items: center;
-  padding: 20px;
+  align-items: flex-start;
+  margin-bottom: 30px;
+  box-sizing: border-box;
 
   input {
     border: 1px solid #d5d5d5;
     height: 45px;
-    width: 90%;
+    width: 95%;
     border-radius: 5px;
-    padding-left: 10px;
     font-size: 21px;
   }
 
@@ -75,9 +77,10 @@ const InputHabito = styled.div`
   div {
     display: flex;
     height: 35px;
-    width: 90%;
+    width: 70%;
     align-items: center;
     justify-content: center;
+    margin-top: 15px;
   }
 `;
 
@@ -90,7 +93,13 @@ const DiasDaSemana = styled.div`
   font-size: 20px;
   margin-right: 4px;
   background-color: ${(props) => props.background};
-  margin-top: 10px;
+  margin-bottom: 20px;
+`;
+
+const Ajuste = styled.span`
+  display: flex;
+  margin-bottom: 15px;
+  width: 50%;
 `;
 
 const BotaoInput = styled.div`
@@ -99,21 +108,22 @@ const BotaoInput = styled.div`
   align-items: center;
   background-color: ${(props) => props.backgroundcolor};
   color: ${(props) => props.color};
-  width: 40px;
-  margin-left: 40px;
+  width: 84px;
+  height: 35px;
   border-radius: 5px;
-  margin-top: 20px;
+  margin-right: 10px;
 `;
 
 const DivHabito = styled.div`
   background-color: white;
-  width: 88vw;
+  width: 90vw;
   height: 91px;
   margin-bottom: 20px;
   padding: 14px;
   border-radius: 5px;
   box-sizing: border-box;
   position: relative;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15);
 
   ion-icon {
     position: absolute;
@@ -144,4 +154,4 @@ const ListaDeHabitos = styled.div`
 `
 
 
-export { HabitosContainer, AddHabito, InputHabito, BotaoInput, DiasDaSemana, DivHabito, ListaDeHabitos };
+export { Ajuste, HabitosContainer, AddHabito, InputHabito, BotaoInput, DiasDaSemana, DivHabito, ListaDeHabitos };

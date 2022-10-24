@@ -8,7 +8,7 @@ export default function Topo() {
   useEffect(() =>{
     const dadosLocais = JSON.parse(localStorage.getItem("trackit"));
     setDadosUsuario(dadosLocais);
-  },[])
+  },[setDadosUsuario])
 
   return (
       <TopoContainer>
@@ -23,20 +23,19 @@ const TopoContainer = styled.div`
   justify-content: space-between;
   align-items: center;
   width: 100vw;
-  height: 80px;
+  height: 70px;
   padding: 0 20px;
   margin-bottom: 80px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
-  background-color: #126ba5;
+  background-color: #126BA5;
   box-sizing: border-box;
   position: fixed;
-  z-index: 2;
+  z-index: 1;
 
   img {
     width: 51px;
     height: 51px;
     border-radius: 50%;
-    font-size: 17px;
   }
 
   span {

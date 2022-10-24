@@ -9,6 +9,7 @@ const LoginStyles = styled.div`
   height: 100vh;
   background-color: white;
   box-sizing: border-box;
+  font-family: 'Lexend Deca', sans-serif;
 
   p{
     color: #52b6ff;
@@ -55,7 +56,7 @@ const LoginStyles = styled.div`
       justify-content: center;
       color: white;
       font-size: 21px;
-      font-family: "Lexend Deca";
+      font-family: 'Lexend Deca', sans-serif;
       margin-bottom: 25px;
     }
   }

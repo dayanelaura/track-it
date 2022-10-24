@@ -21,11 +21,12 @@ const HistoricoContainer = styled.div`
     flex-direction: column;
     padding: 110px 10px 0 10px;
     background-color: #E5E5E5;
+    font-family: 'Lexend Deca', sans-serif;
 
     h1{
         color: #126BA5;
         font-size: 23px;
-        margin-bottom:18px;
+        margin-bottom:17px;
     }
 
     p{
