@@ -18,7 +18,7 @@ export default function Rodape() {
 
   return (
     <RodapeContainer>
-      <Link to="/habitos" style={{ textDecoration: 'none' }}>
+      <Link to="/habitos" style={{ textDecoration: 'none' }} data-identifier="habit-page-action">
         <span>Hábitos</span>
       </Link>
 
@@ -34,7 +34,7 @@ export default function Rodape() {
         />
       </BotaoHoje>
       
-      <Link to="/historico" style={{ textDecoration: 'none' }}>
+      <Link to="/historico" style={{ textDecoration: 'none' }} data-identifier="historic-page-action">
         <span>Histórico</span>
       </Link>
     </RodapeContainer>

@@ -13,7 +13,7 @@ export default function Topo() {
   return (
       <TopoContainer>
         <span>TrackIt</span>
-        <img src={dadosUsuario.image} alt="foto" />
+        <img data-identifier="avatar" src={dadosUsuario.image} alt="foto" />
       </TopoContainer>
   );
 }

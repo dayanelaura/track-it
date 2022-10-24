@@ -73,45 +73,57 @@ export default function Habitos() {
         {meusHabitos.map((habito, index) => (
           <DivHabito key={index}>
 
-            <h1>{habito.name}</h1>
+            <h1 data-identifier="habit-name"> {habito.name} </h1>
             <div>
               <DiasDaSemana
+                data-identifier="week-day-btn"
                 color={habito.days.includes(0) ? "#FFFFFF" : "#dbdbdb"}
                 background={habito.days.includes(0) ? "#CFCFCF" : "#FFFFFF"}>
                 D
               </DiasDaSemana>
               <DiasDaSemana
+                data-identifier="week-day-btn"
                 color={habito.days.includes(1) ? "#FFFFFF" : "#dbdbdb"}
                 background={habito.days.includes(1) ? "#CFCFCF" : "#FFFFFF"}>
                 S
               </DiasDaSemana>
               <DiasDaSemana
+                data-identifier="week-day-btn"
                 color={habito.days.includes(2) ? "#FFFFFF" : "#dbdbdb"}
                 background={habito.days.includes(2) ? "#CFCFCF" : "#FFFFFF"}>
                 T
               </DiasDaSemana>
               <DiasDaSemana
+                data-identifier="week-day-btn"
                 color={habito.days.includes(3) ? "#FFFFFF" : "#dbdbdb"}
                 background={habito.days.includes(3) ? "#CFCFCF" : "#FFFFFF"}>
                 Q
               </DiasDaSemana>
               <DiasDaSemana
+                data-identifier="week-day-btn"
                 color={habito.days.includes(4) ? "#FFFFFF" : "#dbdbdb"}
                 background={habito.days.includes(4) ? "#CFCFCF" : "#FFFFFF"}>
                 Q
               </DiasDaSemana>
               <DiasDaSemana
+                data-identifier="week-day-btn"
                 color={habito.days.includes(5) ? "#FFFFFF" : "#dbdbdb"}
                 background={habito.days.includes(5) ? "#CFCFCF" : "#FFFFFF"}>
                 S
               </DiasDaSemana>
               <DiasDaSemana
+                data-identifier="week-day-btn"
                 color={habito.days.includes(6) ? "#FFFFFF" : "#dbdbdb"}
                 background={habito.days.includes(6) ? "#CFCFCF" : "#FFFFFF"}>
                 S
               </DiasDaSemana>
             </div>
-            <ion-icon onClick={deleteHabito} habitoid={habito.id} name="trash-outline"></ion-icon>
+            <ion-icon 
+              data-identifier="delete-habit-btn" 
+              onClick={deleteHabito} 
+              habitoid={habito.id} 
+              name="trash-outline">
+            </ion-icon>
 
           </DivHabito>
         ))}
@@ -124,53 +136,63 @@ export default function Habitos() {
       <HabitosContainer>
         <AddHabito>
           <h1>Meus hábitos</h1>
-          <div onClick={() => {
+          <div data-identifier="create-habit-btn" 
+            onClick={() => {
             setCarregando(false);
             setCriandoHabito(true);
-            }}> + 
+            }}>
+            + 
           </div>
         </AddHabito>
         <InputHabito display={criandoHabito ? "flex" : "none"}>
-          <input placeholder="nome do hábito" type="text" value={name}
-                 onChange={(e) => setName(e.target.value)} disabled={carregando} />
+          <input placeholder="nome do hábito" type="text" value={name} 
+                 onChange={(e) => setName(e.target.value)} data-identifier="input-habit-name"
+                 disabled={carregando} />
           <div>
             <DiasDaSemana
+              data-identifier="week-day-btn"
               onClick={() => selecionarDias(0)}
               color={days.includes(0) ? "#FFFFFF" : "#dbdbdb"}
               background={days.includes(0) ? "#CFCFCF" : "#FFFFFF"}>
               D
             </DiasDaSemana>
             <DiasDaSemana
+              data-identifier="week-day-btn"
               onClick={() => selecionarDias(1)}
               color={days.includes(1) ? "#FFFFFF" : "#dbdbdb"}
               background={days.includes(1) ? "#CFCFCF" : "#FFFFFF"}>
               S
             </DiasDaSemana>
             <DiasDaSemana
+              data-identifier="week-day-btn"
               onClick={() => selecionarDias(2)}
               color={days.includes(2) ? "#FFFFFF" : "#dbdbdb"}
               background={days.includes(2) ? "#CFCFCF" : "#FFFFFF"}>
               T
             </DiasDaSemana>
             <DiasDaSemana
+              data-identifier="week-day-btn"
               onClick={() => selecionarDias(3)}
               color={days.includes(3) ? "#FFFFFF" : "#dbdbdb"}
               background={days.includes(3) ? "#CFCFCF" : "#FFFFFF"}>
               Q
             </DiasDaSemana>
             <DiasDaSemana
+              data-identifier="week-day-btn"
               onClick={() => selecionarDias(4)}
               color={days.includes(4) ? "#FFFFFF" : "#dbdbdb"}
               background={days.includes(4) ? "#CFCFCF" : "#FFFFFF"}>
               Q
             </DiasDaSemana>
             <DiasDaSemana
+              data-identifier="week-day-btn"
               onClick={() => selecionarDias(5)}
               color={days.includes(5) ? "#FFFFFF" : "#dbdbdb"}
               background={days.includes(5) ? "#CFCFCF" : "#FFFFFF"}>
               S
             </DiasDaSemana>
             <DiasDaSemana
+              data-identifier="week-day-btn"
               onClick={() => selecionarDias(6)}
               color={days.includes(6) ? "#FFFFFF" : "#dbdbdb"}
               background={days.includes(6) ? "#CFCFCF" : "#FFFFFF"}>
@@ -178,8 +200,11 @@ export default function Habitos() {
             </DiasDaSemana>
           </div>
           <Ajuste>
-            <BotaoInput onClick={() => setCriandoHabito(false)} color="#52B6FF" backgroundcolor="#FFFFFF">
-                Cancelar
+            <BotaoInput 
+              data-identifier="cancel-habit-create-btn"
+              onClick={() => setCriandoHabito(false)}
+              color="#52B6FF" backgroundcolor="#FFFFFF">
+              Cancelar
             </BotaoInput>
 
             { carregando ? (
@@ -187,7 +212,10 @@ export default function Habitos() {
                     <ThreeDots color="#FFFFFF" />
                 </BotaoInput>
                 ) : (
-                <BotaoInput onClick={criarHabito} color="#FFFFFF" backgroundcolor="#52B6FF">
+                <BotaoInput 
+                    data-identifier="save-habit-create-btn"
+                    onClick={criarHabito} color="#FFFFFF" 
+                    backgroundcolor="#52B6FF">
                     Salvar
                 </BotaoInput>
                 )
@@ -197,10 +225,12 @@ export default function Habitos() {
         </InputHabito>
 
         {meusHabitos.length === 0 ? ( 
-            <p>Você não tem nenhum hábito cadastrado ainda. Adicione um hábito para começar a trackear!</p>
-            ) : (
-            <ListarHabitos />
-            )
+          <p data-identifier="no-habit-message" >
+            Você não tem nenhum hábito cadastrado ainda. Adicione um hábito para começar a trackear!
+          </p>
+          ) : (
+          <ListarHabitos />
+          )
         }
 
       </HabitosContainer>

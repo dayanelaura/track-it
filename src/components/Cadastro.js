@@ -45,16 +45,16 @@ export default function Cadastro() {
 
       <form onSubmit={handleSubmit}>
         <input value={formCadastro.email} onChange={handleForm} placeholder="email"
-               name="email" type="email" disabled={carregando} 
+               name="email" type="email" disabled={carregando} data-identifier="input-email"
          required />
         <input value={formCadastro.password} onChange={handleForm} placeholder="senha"
-               name="password" type="password" disabled={carregando}
+               name="password" type="password" disabled={carregando} data-identifier="input-password"
          required />
         <input value={formCadastro.name} onChange={handleForm} placeholder="nome"
-               name="name" type="text" disabled={carregando} 
+               name="name" type="text" disabled={carregando} data-identifier="input-name"
          required />
         <input value={formCadastro.image} onChange={handleForm} placeholder="foto"
-               name="image" type="text" disabled={carregando} 
+               name="image" type="text" disabled={carregando} data-identifier="input-photo"
          required />
 
         {carregando ? (
@@ -66,7 +66,7 @@ export default function Cadastro() {
       </form>
 
       <Link to="/">
-        <p>Já tem uma conta? Faça login!</p>
+        <p data-identifier="back-to-login-action">Já tem uma conta? Faça login!</p>
       </Link>
 
     </LoginStyles>

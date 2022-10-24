@@ -61,12 +61,12 @@ export default function Login() {
             <button>
                 <ThreeDots color="#FFFFFF"/>
             </button> ) : 
-          ( <button type="submit">Entrar</button> )
+          ( <button type="submit" data-identifier="login-btn">Entrar</button> )
         }
       </form>
 
       <Link to="/cadastro">
-        <p>Não tem uma conta? Cadastre-se!</p>
+        <p data-identifier="sign-up-action">Não tem uma conta? Cadastre-se!</p>
       </Link>
     </LoginStyles>
   );

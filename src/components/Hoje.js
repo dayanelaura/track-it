@@ -85,7 +85,7 @@ export default function Hoje(){
 
   function DinamicaCard({ nome, recorde, sequencia_atual, done, id }) {
     return (
-      <CardHoje color={done ? "#8FC549" : "#EBEBEB"}>
+      <CardHoje color={done ? "#8FC549" : "#EBEBEB"} data-identifier="today-infos">
         <h2>{nome}</h2>
         <span>
           Sequência atual:{" "}
@@ -99,7 +99,11 @@ export default function Hoje(){
           {recorde} {recorde === 1 ? "dia" : "dias"}
           </SpanSequencia>
         </span>
-        <ion-icon onClick={() => selecionarHabito(id, done)} name="checkmark-sharp" ></ion-icon>
+        <ion-icon 
+          onClick={() => selecionarHabito(id, done)} 
+          data-identifier="done-habit-btn"
+          name="checkmark-sharp" >    
+        </ion-icon>
       </CardHoje>
     );
   }
@@ -109,13 +113,13 @@ export default function Hoje(){
       <Topo />
       <HojeContainer>
         <div>
-          <h1>
+          <h1 data-identifier="today-infos">
             {traducaoDias()}{dayjs().format(", DD/MM")}
           </h1>
           { (HabitosHoje.findIndex((item) => item.done === true) === -1) ? (
                 <p>Nenhum hábito concluído ainda</p> 
             ) : (
-                <TxtConcluidos>
+                <TxtConcluidos data-identifier="today-infos">
                 {((contador / HabitosHoje.length) * 100).toFixed(0)}% dos hábitos concluídos
                 </TxtConcluidos>
             ) 
