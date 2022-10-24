@@ -49,6 +49,7 @@ export default function Hoje(){
         }
       );
     });
+
   }
 
   function selecionarHabito(ID_HabitoHoje, done){
@@ -102,7 +103,7 @@ export default function Hoje(){
         <ion-icon 
           onClick={() => selecionarHabito(id, done)} 
           data-identifier="done-habit-btn"
-          name="checkmark-sharp" >    
+          name="checkmark-sharp" >
         </ion-icon>
       </CardHoje>
     );

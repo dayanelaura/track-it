@@ -69,7 +69,7 @@ const BotaoHoje = styled(Link)`
   justify-content: center;
   width: 91px;
   height: 91px;
-  left: 36vw;
+  left: 36.9%;
   padding: 5px;
   bottom: 16px;
   color: white;

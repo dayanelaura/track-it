@@ -8,7 +8,6 @@ const HojeContainer = styled.div`
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  margin-bottom: 70px;
 
   h1 {
     font-family: 'Lexend Deca', sans-serif;
@@ -30,6 +29,8 @@ const HojeContainer = styled.div`
 const CardsContainer = styled.div`
   width: 100vw;
   box-sizing: border-box;
+  padding-bottom: 40%;
+  background-color: #E5E5E5;
 `;
 
 const CardHoje = styled.div`

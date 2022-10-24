@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { ThreeDots } from "react-loader-spinner";
 import { enviarHabito, receberHabito, deletarHabito } from "../API/dadosRequests";
-import { Ajuste, HabitosContainer, AddHabito, InputHabito, BotaoInput, DiasDaSemana, DivHabito, ListaDeHabitos } from "../styled_components/HabitosStyles";
+import { Ajuste, HabitosContainer, AddHabito, InputHabito, BotaoInput, DiasDaSemana, DivHabito, BodyHabitos } from "../styled_components/HabitosStyles";
 import UserContext from "../UserContext";
 import Rodape from "./Rodape";
 import Topo from "./Topo";
@@ -69,7 +69,7 @@ export default function Habitos() {
   function ListarHabitos() {
 
     return (
-      <ListaDeHabitos>
+      <>
         {meusHabitos.map((habito, index) => (
           <DivHabito key={index}>
 
@@ -127,7 +127,7 @@ export default function Habitos() {
 
           </DivHabito>
         ))}
-      </ListaDeHabitos>
+      </>
     );
   }
   return (
@@ -225,11 +225,17 @@ export default function Habitos() {
         </InputHabito>
 
         {meusHabitos.length === 0 ? ( 
-          <p data-identifier="no-habit-message" >
-            Você não tem nenhum hábito cadastrado ainda. Adicione um hábito para começar a trackear!
-          </p>
+          <>
+            <p data-identifier="no-habit-message" >
+              Você não tem nenhum hábito cadastrado ainda. Adicione um hábito para começar a trackear!
+            </p>
+            <BodyHabitos />
+          </>
           ) : (
-          <ListarHabitos />
+          <>
+            <ListarHabitos />
+            <BodyHabitos />
+          </>
           )
         }
 

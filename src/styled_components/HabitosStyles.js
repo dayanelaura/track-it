@@ -6,17 +6,20 @@ const HabitosContainer = styled.div`
   padding-left: 20px;
   padding-right: 18px;
   padding-top: 100px;
-  padding-bottom: 85%;
   background-color: #e5e5e5;
   font-family: 'Lexend Deca', sans-serif;
-  height: 100vh;
-  
+
   p {
     color: #666666;
     font-size: 18px;
     width: 90vw;
   }
 `;
+
+const BodyHabitos = styled.div`
+    background-color: #e5e5e5;
+    padding-bottom: 100%;
+`
 
 const AddHabito = styled.div`
   display: flex;
@@ -149,9 +152,4 @@ const DivHabito = styled.div`
   }
 `;
 
-const ListaDeHabitos = styled.div`
-  padding-bottom: 80px;
-`
-
-
-export { Ajuste, HabitosContainer, AddHabito, InputHabito, BotaoInput, DiasDaSemana, DivHabito, ListaDeHabitos };
+export { BodyHabitos, Ajuste, HabitosContainer, AddHabito, InputHabito, BotaoInput, DiasDaSemana, DivHabito  };
