@@ -1,5 +1,7 @@
 # TrackIt 📈
+This is an application entirely built on the front-end.
 
+# About
 Track It is a complete habit tracking application, in which the user can create, list, delete, mark or unmark as done and view the history of all their habits
 
 ## Technologies
