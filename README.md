@@ -22,3 +22,9 @@ npm i
 ```bash
 npm run start
 ```
+
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+
+### Deployment
+
+https://projeto11-trackit-eight.vercel.app/
