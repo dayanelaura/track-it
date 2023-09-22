@@ -4,6 +4,11 @@ This is an application entirely built on the front-end.
 # About
 Track It is a complete habit tracking application, in which the user can create, list, delete, mark or unmark as done and view the history of all their habits
 
+<p align="center">
+  <img src="https://github.com/dayanelaura/track-it/assets/107273469/c8d0f54e-6ad0-49dc-89c1-b801eacf65b0" width="200" height="400">
+  <img src="https://github.com/dayanelaura/track-it/assets/107273469/51c8ae0d-ea21-43fa-926d-81496c700b68" width="200" height="400">
+</p>
+
 ## Technologies
 
   ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
